@@ -1,0 +1,48 @@
+SELECTION SORT
+IDEA : select minimum element and swap it with the first 
+
+for(int i=0 ; i<=n-2 ; i++){
+		int mini = i;
+		for(int j=i ; j<n ; j++){
+			if(v[mini] > v[j]) mini = j;
+		}
+		swap(v[mini],v[i]);
+	}
+
+WORST , AVG , BEST => O(N2)
+----------------------------------------------------------------
+BUBBLE SORT
+IDEA : PUSHING THE MAX ELEMENT TO THE LAST (ADJACENT SWAPPING)
+
+bool flag = 1;
+	for(int i=n-1 ; i>=1 ; i--){
+		for(int j=0 ; j<=i-1 ; j++){
+			if(v[j] >= v[j+1]){
+				flag = 0;
+				swap(v[j],v[j+1]);
+			}
+		}
+		if(flag == 1) break;
+	}
+
+WORST , AVG => O(N2)
+BEST => O(N) 
+-----------------------------------------------------------------
+
+INSERTION SORT
+IDEA : TAKES AN ELEMENT AND PLACES IT IN IT'S CORRECT POSITION
+
+bool flag = 1;
+for(int i=0 ; i<n ; i++){
+		for(int j=i ; j>=1 ; j--){
+			if(v[j] <= v[j-1]){
+        flag = 0;
+				swap(v[j],v[j-1]);
+			}
+		}
+    if(flag == 1) break;
+	}
+
+WORST , AVG => O(N2)
+BEST => O(N) 
+-----------------------------------------------------------------
