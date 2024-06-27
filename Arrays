@@ -1,0 +1,92 @@
+Check if Array Is Sorted and Rotated -> nums[i]>nums[(i+1)%n
+--------------------------------------------------------------------------
+Rotate an array by k places
+
+rotate right me piche se k elements and rotate left me aage se k elements
+--------------------------------------------------------------------------
+Longest Subarray Sum K (only positives) -> sliding window 
+--------------------------------------------------------------------------
+Longest Subarray Sum K (both positives & negatives) -> hashing
+--------------------------------------------------------------------------
+Kadane's algorithm (Maximum Sum Subarray)
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int n = nums.size();
+        int sum = 0;
+        int ans = INT_MIN;
+
+        int real_start = 0, real_end = 0 , start = 0;
+
+        for(int i=0 ; i<n ; i++){
+            if(sum == 0) start = i;
+            sum += nums[i];
+            
+            
+            if(sum > ans){
+                ans = sum;
+                real_start = start;
+                real_end = i;
+            }if(sum < 0){
+                sum = 0;
+            }
+        }
+
+        for(int i = real_start ; i<= real_end ; i++){
+            cout<<nums[i]<<" ";
+        }
+        
+        return ans;
+    }
+};
+
+DIVIDE AND CONQUER APPROACH
+--------------------------------------------------------------------------
+Next Permutation
+
+Method1 : Generate every permuationa and then sort it.
+Method2 : using STL function next_permutation(nums.begin(),nums.end());
+
+Method3 : Find the first index for which a[i] < a[i+1] and mark this breakpoint index , then we find an element which is 
+          just greater than the breakpoint element and swap the (breakPointElement,justGreaterElement)
+
+          rest we sort the breakpoint + 1 to the last index
+
+--------------------------------------------------------------------------
+
+Set Zeroes : O(1) wala approch is use the mat[0][...] and mat[...][0] as storing whether zero or not and for either 0th row or oth col 
+             keep an extra variable.
+
+--------------------------------------------------------------------------
+
+Spiral Matrix : while(top<=bottom && right>=left)
+
+--------------------------------------------------------------------------
+
+Number of subarrays with sum equals to k
+mp[0]++ is done initially because if the till_sum itself is k , then required would be sum - k = 0 , and hence we need a value 0 in the map
+
+--------------------------------------------------------------------------
+
+Pascal's Triangle
+Three types of problems are possible
+i)  directly find the value of the cell number [R,C] where the pascal's triangle is 1 based indexing 
+    R-1 c C-1
+
+    for calcuting NcR , the time complexity is O(R)
+
+ii) given the row number , find all the elements of row 
+  
+    brute force would be for nth row , the number of elements would be n elements.    
+    hence time complexity would be (number of elements) * R , where R is the tc for NcR
+    optimal is write down any row and observe a pattern .
+
+iii) Print the whole triangle
+
+--------------------------------------------------------------------------
+
+Majority Element
+if floor(n/3) , in that case the number of possible answers would be <= 2
+Main core concept is that we use an element x and count its occurance untill we encounter any non x element.
+
+--------------------------------------------------------------------------
