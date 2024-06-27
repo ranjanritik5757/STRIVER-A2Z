@@ -41,7 +41,9 @@ public:
 };
 
 DIVIDE AND CONQUER APPROACH
+
 --------------------------------------------------------------------------
+
 Next Permutation
 
 Method1 : Generate every permuationa and then sort it.
@@ -90,3 +92,21 @@ if floor(n/3) , in that case the number of possible answers would be <= 2
 Main core concept is that we use an element x and count its occurance untill we encounter any non x element.
 
 --------------------------------------------------------------------------
+
+Maximum product subarray
+firstly try thinking in a direction when zero is not there and consider only one negative number think of the negative number to be in left idx , 
+right idx , or middle idx
+
+and then move onto considering the zeroes
+
+--------------------------------------------------------------------------
+
+Merge intervals -> Sort and think about how you would merge accordingly
+
+--------------------------------------------------------------------------
+
+3Sum , 4Sum , MergeSort , QuickSort , Count Inversions , Reverse Pairs
+
+--------------------------------------------------------------------------
+
+
