@@ -33,15 +33,16 @@ INSERTION SORT
 IDEA : TAKES AN ELEMENT AND PLACES IT IN IT'S CORRECT POSITION
 
 bool flag = 1;
-for(int i=0 ; i<n ; i++){
-		for(int j=i ; j>=1 ; j--){
-			if(v[j] <= v[j-1]){
-        flag = 0;
-				swap(v[j],v[j-1]);
-			}
-		}
-    if(flag == 1) break;
-	}
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j >= 1; j--) {
+                if (v[j] <= v[j - 1]) {
+                    flag = 0;
+                    swap(v[j], v[j - 1]);
+                }
+            }
+            if (flag == 1)
+                break;
+        }
 
 WORST , AVG => O(N2)
 BEST => O(N) 
